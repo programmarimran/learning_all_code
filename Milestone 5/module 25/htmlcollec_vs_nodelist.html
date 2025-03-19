@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <section class="paragraph">
+            <h1>kiso</h1>
+            <h1>ekta</h1>
+            <h1>Holo</h1>
+        </section>
+    </main>
+    <script>
+        // getElementsByClassName will return an HTMLCollection
+const paragraphs = document.getElementsByClassName("paragraph")
+console.log(paragraphs)
+
+// Use the index to get the first paragraph
+let firstParagraph = paragraphs[0] 
+console.log(firstParagraph)
+
+// Use the length property
+console.log(paragraphs.length)
+    </script>
+    <!-- ********************************** -->
+     <script>
+        // getElementsByClassName will return an HTMLCollection
+const paragraphsq = document.querySelectorAll(".paragraph h1")
+console.log(paragraphs)
+
+// Use the index to get the first paragraph
+let firstParagraphq = paragraphs[0] 
+console.log(firstParagraph)
+
+// Use the length property
+console.log(paragraphs.length)
+     </script>
+</body>
+</html>

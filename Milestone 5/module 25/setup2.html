@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup 2 for the Javascript</title>
+</head>
+<body>
+    <header></header>
+
+     <main>
+       <section id="name_container">
+        <h1 id="group">My Family member</h1>
+        <ul>
+            <li>Rohim</li>
+            <li>Korim</li>
+            <li>Jorim</li>
+            <li>Mohim</li>
+        </ul>
+       </section>
+       <section>
+        <h1 id="nana">My tour jurney</h1>
+        <ul>
+            <li class="place_name">Sundorbon</li>
+            <li class="place_name">bandorbon</li>
+            <li class="place_name">katabon</li>
+            <li>gassbon</li>
+        </ul>
+       </section>
+     </main>
+
+     <footer></footer>
+
+
+     <!-- *************************************************************** -->
+     <script>
+        const idcollectoin = document.getElementById("group")
+        console.log(idcollectoin.innerText = "Me and my parents and brother")
+        //*********************************************
+
+        const query =document.querySelector('#name_container ul li')
+        console.log(query)
+        //**********************************************
+        const queryAll = document.querySelectorAll("#name_container ul li")
+        console.log(queryAll)
+        
+     </script>
+<!-- ********************************************** -->
+     <script>
+        const liCollection = document.getElementsByTagName("li")
+        console.log(liCollection)
+        console.log('li')
+     </script>
+     <!-- ********************************************** -->
+      <script>
+        const classcolllection = document.getElementsByClassName('place_name')
+        // console.log(classcolllection)
+        for(const place of classcolllection){
+            console.log(place.innerText)
+        }
+      </script>
+<!-- ******************************************************** -->
+      <script>
+        const classcolllection2 = document.getElementById('nana') //cosnt dileo poriborton hoi kn
+        classcolllection2.innerText = 'Amar bromon';
+        console.log(classcolllection2)
+      </script>
+      <!-- ********************************************* -->
+      <script>
+        const asdf = document.getElementsByTagName("li")
+        console.log(asdf[0].innerText) //undifined kno dekhaise
+      </script>
+</body>
+</html>

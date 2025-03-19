@@ -1,0 +1,21 @@
+/* *{margin:;} */
+.parent{
+    /* padding: 2px; */
+    margin-left: 0;
+    background-color: wheat;
+    display: flex;
+    gap:40px;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:center;
+    flex-direction:row;
+    
+}
+.child{
+    margin: .5px;
+    padding: 2px 22px;
+    border: 2px solid tomato;
+    /* visibility: hidden; */
+    /* display: none; */
+    font-size: 30px;
+}

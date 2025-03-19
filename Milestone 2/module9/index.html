@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css flex + media query</title>
+    <style>
+        .container{
+            display: flex;
+            gap: 10px;
+            
+        }
+        .container2{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+        .child{
+            background-color: aquamarine;
+            border-radius: 10px;
+            padding: 20px;
+
+        }
+        .btn{
+            background-color: blanchedalmond;
+            padding: 10px;
+            width: 70px;
+            height: 100px;
+            border-radius: 5px;
+        }
+        @media screen and (max-width:576px) {
+            .container{
+                flex-direction: column;
+            }
+            
+        }
+        @media screen and (min-width:577px) and (max-width:680) {
+            .container{
+                flex-direction:row;
+            }
+            
+        }
+        @media screen and (min-width:681px){
+            .container{
+                flex-direction:column-reverse;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <section class="container">
+            <div class="child">
+                <h2>box:1 </h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, similique ipsam ipsa nihil quae magnam placeat itaque iusto reprehenderit, voluptatum hic, praesentium quis.</p>
+            </div>
+            <div class="child">
+                <h2>box:2 </h2>
+                <p>Rem totam qui nemo ea obcaecati rerum fuga. Ex itaque voluptas unde est quae ut consequatur inventore numquam placeat? Earum rerum sapiente reprehenderit.</p>
+            </div>
+            <div class="child">
+                <h2>box:3</h2>
+                <p>Soluta nam blanditiis vel. Eaque, maxime repellendus reiciendis corporis id sequi, voluptas fugit alias aliquid accusantium laudantium quo vel! Distinctio perferendis nisi dicta.</p>
+            </div>
+            <div class="child">
+                <h2>box:4</h2>
+                <p>Soluta nam blanditiis vel. Eaque, maxime repellendus reiciendis corporis id sequi, voluptas fugit alias aliquid accusantium laudantium quo vel! Distinctio perferendis nisi dicta.</p>
+            </div>
+        </section>
+        <section class="container2">
+            <div class="btn">box:1</div>
+            <div class="btn">box:2</div>
+            <div class="btn">box:3</div>
+            <div class="btn">box:4</div>
+            <div class="btn">box:5</div>
+            <div class="btn">box:6</div>
+            <div class="btn">box:7</div>
+            <div class="btn">box:8</div>
+            <div class="btn">box:9</div>
+            <div class="btn">box:10</div>
+            <div class="btn">box:11</div>
+            <div class="btn">box:12</div>
+            <div class="btn">box:13</div>
+            <div class="btn">box:14</div>
+            <div class="btn">box:15</div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

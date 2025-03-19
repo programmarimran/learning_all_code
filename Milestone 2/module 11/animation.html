@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amimatin</title>
+    <style>
+        
+        @keyframes user{
+        
+        from{
+            left: 0;
+        }
+        to{
+            left: 500px;
+        }
+        }
+        body{
+            background-color: black;
+        }
+        .container{
+            height: 300px;
+            width: 500px;
+            background-color: wheat;
+            position: relative;
+        }
+
+        .child{
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            border-radius: 50%;
+            position: relative;
+            animation: user 2s ease-in-out infinite ;
+        }
+       
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="child"></div>
+        </div>
+    </main>
+</body>
+</html>

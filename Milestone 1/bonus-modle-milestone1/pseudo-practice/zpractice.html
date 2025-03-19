@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            position: relative;
+            left: 100px;
+        }
+        .ring{
+            z-index:1;
+            top:-80px;
+        }
+        .boy{
+            z-index:10;
+        }
+        .water{
+            bottom: 150px;
+        }
+        .the::before{
+            content:'start:';
+            background-color: red;
+            font-size: 50px;
+        }
+        .parent li::after{
+            content: '.pdf';
+            font-size: 10px;
+        }
+        p::first-letter{
+            font-size: 32px;
+            background-color: lightblue;
+            color: red;
+
+        }
+        .pi::selection{
+            background-color: aqua;
+        }
+        .bi:hover{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <h1>Z index practice</h1>
+    <div class="swim-container">
+        <div class="box boy"><img src="../pseudo-position/swim/boy.svg" alt="">
+        </div>
+        <div class="box ring"><img src="../pseudo-position/swim/ring.svg" alt="">
+        </div>
+        <div class="box water"><img src="../pseudo-position/swim/water.svg" alt="">
+        </div>
+    </div>
+    <h1 class="the">THE NAME OF MY NATIVE</h1>
+        <ul class="parent">
+            <li>ami</li>
+            <li>jami</li>
+            <li>DAMI</li>
+            <li>KHAMI</li>
+        </ul>
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut quia tempora modi illo corporis dicta corrupti dignissimos sint vel reiciendis!</p>
+  <p class="pi">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut quia tempora modi illo corporis dicta corrupti dignissimos sint vel reiciendis!</p>
+  <p class="bi">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut quia tempora modi illo corporis dicta corrupti dignissimos sint vel reiciendis!</p>
+</body>
+</html>

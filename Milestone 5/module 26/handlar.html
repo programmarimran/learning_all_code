@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handlar gorgious <button></button></title>
+</head>
+<body>
+    <!-- ****************************************************** -->
+    <h1 id="page-title">handlar title</h1>
+    <button id="page-btn-title">change page title</button>
+    <!-- ********************************************************** -->
+    <br>
+    <br>
+    <br>
+
+    <p id="login-checker">no login</p>
+    <button id="btn-submit">login</button>
+<!-- ****************************************************** -->
+    <br>
+    <br>
+    <br>
+    <p id="name">no name</p>
+    <input placeholder="please your name" id="input-name" type="text">
+    <button id="btn-name-input">submit</button>
+    <!-- ***************************************************************** -->
+     <br>
+     <br>
+     <br>
+     <p id="person">no person</p>
+     <input type="text" id="output-person">
+     <button id="input-person">submit2</button>
+    <script>
+      document.getElementById('input-person')
+      .addEventListener('click',function(){
+        const person =document.getElementById('person')
+        const inputPerson =document.getElementById('output-person')
+        
+        if(inputPerson.value){
+            person.innerText=inputPerson.value;
+        }
+        else{
+            person.innerText='empty'
+        }
+           
+       
+       
+      })
+    </script>
+    <script src="js/hanslar.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+ nav > ul > li{
+ 
+    margin-right: 18%;
+    /* text-align: center; */
+    font-size: large;
+    display:inline;
+    font-weight: bolder;
+}
+
+footer{
+    text-align: center;
+    margin-top: 50px;
+
+}
+figure{
+    text-align: center;
+}
+article > header{
+    text-align: center;
+}
+p > ul > li{
+    display: block;
+}
+a{
+    text-decoration: none;
+}
+#p{
+    margin-right: 10px;
+}
+

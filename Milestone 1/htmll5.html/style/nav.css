@@ -1,0 +1,27 @@
+nav > ul{
+    display: flex;
+}
+nav li{
+    list-style: none;
+    padding: 10px;
+    margin-right: 20px;
+
+}
+nav ul li a{
+    text-decoration: none;
+    color: black;
+    /* background-color: violet; */
+}
+nav li:hover{
+    background-color: burlywood;
+}
+/* Dropdown menu is started */
+nav > ul > li > .dropdown{
+    display: none;
+    position: absolute;
+    padding-left: 10px;
+}
+nav li:hover .dropdown{
+    display: block;
+    background-color: beige;
+}

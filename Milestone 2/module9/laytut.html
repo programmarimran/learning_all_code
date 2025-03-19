@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout for the csss grit</title>
+    <style>
+        body{
+            background-color: black;
+             color: white;
+        }
+        .parent{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 5px;
+        }
+        #NO1{
+            grid-row:span 5;
+        }
+        #NO11,#NO12{
+            grid-column: span 3;
+        }
+        .child{
+            background-color: aquamarine;
+            border: 3px solid thistle;
+            /* height: 150px; */
+            font-size: 25px;
+            font-weight: 700;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #NO12{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main>
+        <section>
+            <div class="parent">
+                <div class="child" id="NO1">lorem500</div>
+                <div class="child" id="NO2">2 </div>
+                <div class="child" id="NO3">3 </div>
+                <div class="child" id="NO4">4 </div>
+                <div class="child" id="NO5">5 </div>
+                <div class="child" id="NO6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat officiis nemo maxime, inventore alias maiores quod debitis quis voluptate amet, delectus possimus. Eveniet, ab veritatis tempore exercitationem expedita beatae molestias libero officiis reiciendis officia, dolorum rem harum odit corporis laboriosam. </div>
+                <div class="child" id="NO7">7 </div>
+                <div class="child" id="NO8">8 </div>
+                <div class="child" id="NO9">9 </div>
+                <div class="child" id="NO10"> 10</div>
+                <div class="child" id="NO11"> 11 </div>
+                <div class="child" id="NO12">12 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam mollitia optio illum ipsam, libero accusantium culpa nobis. Totam aliquam at, voluptatum officiis natus consequatur laboriosam distinctio ducimus et, aspernatur numquam?</div>
+            </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

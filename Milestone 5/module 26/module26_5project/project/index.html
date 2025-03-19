@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crete dinamic input <fieldset></fieldset></title>
+</head>
+<body>
+    <main>
+        <div><label class="input input-bordered flex items-center gap-2">
+            <input id="product-name" type="text" class="grow" placeholder="Product name" />
+          </label>
+          <br>
+          <label class="input input-bordered flex items-center gap-2">
+            <input id="productImage" type="text" placeholder="Enter your Image link">
+          </label>
+          <br>
+          <label class="input input-bordered flex items-center gap-2">
+            <input id="productNumber" type="number" class="grow" value="Enter your number" />
+          </label>
+          <button id="btn-submit">submit</button></div>
+        <div id="User-container">
+
+        </div>
+    </main>
+    
+    <script>
+       
+        document.getElementById('btn-submit')
+        .addEventListener('click',function(){
+            const productName=document.getElementById('product-name').value;
+        const productImage =document.getElementById('productImage').value;
+        const productNumber =document.getElementById('productNumber').value;
+        const userContainer=document.getElementById('User-container');
+        
+            const div=document.createElement('div');
+            div.innerHTML=`
+            <h1>${productName}</h1>;
+            <img src="${productImage}" alt="Upcomming">;
+            <p>${productNumber}</p>
+            `
+            userContainer.appendChild(div);
+            //******************************************
+            
+        })
+    </script>
+</body>
+</html>

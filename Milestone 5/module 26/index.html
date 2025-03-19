@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event javascript</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>STart the event for the javascript</h1>
+    <button onclick="console.log(8)">click me</button>
+    <button onclick="console.log('kiso ekta')">click me</button>
+    <input type="text">
+    <br>
+
+    <button onclick="makeYellow()">click yellow</button>
+    <button id="btn-red">click Red</button>
+    <button id="btn-purple">click purple</button>
+    <br>
+    <button id="btn-make-golden">click golden</button>
+    <button id="btn-make-blue">click blue</button>
+    <br>
+    <button id="btn-mouse-in">mouse dubble click</button>
+    <button id="btn-thers">others</button>
+
+
+    <script>
+
+
+
+
+
+
+        document.getElementById('btn-make-blue')
+            .addEventListener('click',function(){
+                document.body.style.backgroundColor='blue'
+            })
+
+
+        document.getElementById('btn-make-golden').addEventListener('click',function (){
+            document.body.style.backgroundColor='goldenrod'
+        })        
+    </script>
+    
+
+    <script src="js/event.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>comment box</title>
+    <style>
+        .comment{
+            border: 2px solid purple;
+            background-color: lightgray;
+            border-radius: 15px;
+            padding: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>My first website create comment</h1>
+    <section>
+        <h1>what class do you reading?</h1>
+        <div id="container">
+            <p class="comment">Lorem, ipsum dolor sit Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit ab, deleniti voluptatibus nesciunt tenetur maxime pariatur sunt accusamus! Alias velit cupiditate a. Sed quisquam nulla quas excepturi saepe, ullam unde. amet consectetur adipisicing elit. Iure, sequi!</p>
+            <p class="comment">Distinctio dolorum, Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi nulla vero in omnis, voluptate aspernatur iusto? Quia eaque animi tempora id totam quam corrupti, nostrum similique quas sunt numquam dolorum.voluptate architecto eligendi nostrum iusto nemo id aperiam.</p>
+            <p class="comment">Quisquam tempore laborumlo Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, minus iste quae ut dicta architecto, rerum quidem veniam minima eius rem explicabo voluptatibus! Fugiat vel enim voluptates tempora temporibus! Consectetur. pariatur illo cupiditate inventore esse ducimus porro.</p>
+        </div>
+        <textarea name="" id="text-area" cols="30" rows="5"></textarea>
+        <button id="btn-send" disabled >send</button>
+    </section>
+    
+    <script>
+        document.getElementById('text-area')
+        .addEventListener('keyup',function(){
+            const textAreaValue =document.getElementById('text-area').value;
+            if(textAreaValue){
+                document.getElementById('btn-send').removeAttribute('disabled')
+            }
+            else{
+                document.getElementById('btn-send').setAttribute('disabled',true)
+            }
+            
+        })
+        document.getElementById('btn-send')
+        .addEventListener('click',function(){
+            const newComment =document.getElementById('text-area');
+            const inputValue=newComment.value;
+            // console.log(newComment)
+
+            const CommentPeople = document.getElementById('container');
+
+            const newCommentPerson =document.createElement("p");
+            newCommentPerson.classList.add('comment')
+            CommentPeople.appendChild(newCommentPerson)
+
+            const btnSend =document.getElementById('btn-send')
+           if(inputValue){
+            
+            // document.getElementById('btn-send').removeAttribute('disabled')
+            
+            newCommentPerson.innerText=inputValue;
+            newComment.value='';
+           }
+           else{
+            newCommentPerson.innerText='empty'
+           }
+
+        })
+
+    </script>
+    <script src="js/comment.js"></script>
+</body>
+</html>

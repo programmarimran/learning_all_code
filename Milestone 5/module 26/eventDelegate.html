@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event delegate</title>
+</head>
+<body>
+    <h1>Event delegate is starting</h1>
+    <ol id="list-container">
+        <li class="item">awsome item 1</li>
+        <li class="item">awsome item 2</li>
+        <li class="item">awsome item 3</li>
+        <li class="item">awsome item 4</li>
+        <li class="item">awsome item 5</li>
+    </ol>
+    <button id="btn-user-li">add li</button>
+    <script>
+        const listContainer =document.getElementById('list-container');
+
+        // listContainer.addEventListener('click',function(event){
+        //     event.target.parentNode.removeChild(event.target)
+        // })
+
+       document.getElementById("btn-user-li")
+    .addEventListener("click",function(event){
+        const check =event.target.parentNode.firstChild.nextSibling
+        console.log(check)
+    })
+
+        const items =document.getElementsByClassName('item');
+        for(const item of items){
+            item.addEventListener('click',function(event){
+                event.target.parentNode.removeChild(event.target)
+                
+            })
+        }
+
+        document.getElementById('btn-user-li')
+        .addEventListener('click',function(event){
+            const createLi =document.createElement('li')
+            createLi.innerText='Added a new list item $';
+
+            createLi.classList.add('item')
+
+            listContainer.appendChild(createLi)
+
+            createLi.addEventListener('click',function(event){     
+                event.target.parentNode.removeChild(event.target)   //eiter parent keda
+            })
+        })
+    </script>
+
+    <script>
+        //Parent-Child Navigation:
+// event.target.parentNode → ইভেন্ট যেই এলিমেন্টে ঘটেছে, তার প্যারেন্ট নোড।
+// event.target.children → ইভেন্ট এলিমেন্টের সব ডাইরেক্ট চাইল্ড এলিমেন্টের কালেকশন।
+// event.target.firstChild → প্রথম child (যেটা টেক্সট নোডও হতে পারে)।
+// event.target.firstElementChild → প্রথম child যা শুধুমাত্র HTMLElement হবে।
+// event.target.lastChild → শেষ child।
+// event.target.lastElementChild → শেষ child যা শুধুমাত্র HTMLElement হবে।
+// event.target.nextSibling → পরবর্তী সিবলিং (textNode সহ)।
+// event.target.nextElementSibling → পরবর্তী সিবলিং যা শুধুমাত্র HTMLElement হবে।
+// event.target.previousSibling → আগের সিবলিং (textNode সহ)।
+// event.target.previousElementSibling → আগের সিবলিং যা শুধুমাত্র HTMLElement হবে।
+    </script>
+</body>
+</html>

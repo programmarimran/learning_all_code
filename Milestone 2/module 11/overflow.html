@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>overflow </title>
+    <style>
+        .container{
+            border: 2px solid salmon;
+            width: 300px;
+            /* height: 101px; */
+            /* border-block-start-color: black; */
+            /* white-space: nowrap; */
+            /* overflow: hidden; */
+            /* text-overflow: ellipsis; */
+        }
+        .child{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            /* text-overflow: clip; */
+        }
+        .parent{
+            border: 2px solid tomato;
+            height: 200px;
+            width: 500px;
+            /* overflow:auto; */
+            overflow-y: scroll;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        
+        <div class="container">
+            <h2>box 1</h2>
+            <p title="dipisicing elit. Cumque nobis corrupti obcaecati aut architecto voluptates facere ">Lorem, ipsum dolor sit amet consectetur alabore!">read more</p>
+        </div>
+        <div class="container">
+            
+            <p title="nobis corrupti rem, ipsum dolor sit amet conseceam cupiditate necessit" class="child">Lorem, ipsum dolor sit amet conseceam cupiditate necessitatib!</p>
+        </div>
+    </header>
+    <div class="parent">
+        <h2>box 1</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque nobis corrupti ipsum, aut molestiae ab voluptatem placeat officiis minus harum vero itaque quas neque blanditiis numquam culpa aliquid animi impedit, veniam necessitatibus eligendi mollitia eius et. Quisquam eaque quasi quia labore maxime molestias voluptatem suscipit quae autem numquam perferendis omnis quos animi provident, inventore ipsam voluptas! Placeat, et animi? Itaque provident consequuntur, sapiente tenetur placeat ducimus dolore aliquid ipsam cupiditate necessitatibus autem veritatis, alias adipisci! Illo enim qui possimus consequuntur quibusdam ratione alias numquam odit nihil ab. Quam, repudiandae magni itaque perferendis nihil quo consequuntur minima, rem quasi fugiat laboriosam ad saepe dignissimos porro dolores eius perspiciatis vel molestiae et sed unde dicta? Doloremque quae facere pariatur eos dolor quia tempore aut modi consectetur tenetur beatae praesentium assumenda minus suscipit corrupti maiores cum, magnam cumque dolores expedita vel, atque et ratione. Praesentium unde earum amet aperiam. Libero quam inventore velit autem saepe qui. Sint sequi placeat quisquam nihil quidem ducimus dolore earum repellendus labore reprehenderit sapiente minima quod molestiae vitae temporibus ratione voluptas adipisci doloremque sit natus, doloribus eligendi blanditiis soluta. Accusamus nostrum similique debitis delectus enim numquam, minima nam voluptatem eos saepe praesentium, obcaecati aut architecto voluptates facere labore!</p>
+    </div>
+    <div class="parent">
+        <h2>box 2</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque nobis corrupti ipsum, aut molestiae ab voluptatem placeat officiis minus harum vero itaque quas neque blanditiis numquam culpa aliquid animi impedit, veniam necessitatibus eligendi mollitia eius et. Quisquam eaque quasi quia labore maxime molestias voluptatem suscipit quae autem numquam perferendis omnis quos animi provident, inventore ipsam voluptas! Placeat, et animi? Itaque provident consequuntur, sapiente tenetur placeat ducimus dolore aliquid ipsam cupiditate necessitatibus autem veritatis, alias adipisci! Illo enim qui possimus consequuntur quibusdam ratione alias numquam odit nihil ab. Quam, repudiandae magni itaque perferendis nihil quo consequuntur minima, rem quasi fugiat laboriosam ad saepe dignissimos porro dolores eius perspiciatis vel molestiae et sed unde dicta? Doloremque quae facere pariatur eos dolor quia tempore aut modi consectetur tenetur beatae praesentium assumenda minus suscipit corrupti maiores cum, magnam cumque dolores expedita vel, atque et ratione. Praesentium unde earum amet aperiam. Libero quam inventore velit autem saepe qui. Sint sequi placeat quisquam nihil quidem ducimus dolore earum repellendus labore reprehenderit sapiente minima quod molestiae vitae temporibus ratione voluptas adipisci doloremque sit natus, doloribus eligendi blanditiis soluta. Accusamus nostrum similique debitis delectus enim numquam, minima nam voluptatem eos saepe praesentium, obcaecati aut architecto voluptates facere labore!</p>
+    </div>
+</body>
+</html>

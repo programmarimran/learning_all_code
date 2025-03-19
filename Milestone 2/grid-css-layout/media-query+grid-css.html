@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media query & grid class</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 5px;
+        }
+        .food{
+            border: 2px solid blueviolet;
+            border-radius: 16px;
+            padding: 10px;
+        }
+        img{
+            width:100%;
+            border-radius: 20px;
+        }
+        @media screen and (max-width:576px){
+            .container{ 
+                grid-template-columns:repeat(1,1fr);
+            }
+        }
+        @media screen and (min-width:577px) and (max-width:768px){
+            .container{
+                grid-template-columns:repeat(2,1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="food">
+            <img src="./nthy.jpg" alt="">
+            <h3 class="">food no 1</h3>
+            <p class="">price: $100</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias voluptatibus ipsa inventore excepturi illum, quod dolor doloremque sint.</p>
+        </div>
+        <div class="food">
+            <img src="./nthy.jpg" alt="">
+            <h3 class="">food no 2</h3>
+            <p class="">price: $200</p>
+            <p>Ipsa, itaque corrupti. Et, iste eveniet. Nostrum quas aperiam ratione ipsum veritatis explicabo laboriosam officia neque porro odit.</p>
+        </div>
+        <div class="food">
+            <img src="./nthy.jpg" alt="">
+            <h3 class="">food no 3</h3>
+            <p class="">price: $300</p>
+            <p>Dolores sed ipsum culpa odit provident quo, vero at? Asperiores quisquam qui laboriosam sed commodi voluptas quos harum?</p>
+        </div>
+        <div class="food">
+            <img src="./nthy.jpg" alt="">
+            <h3 class="">food no 4</h3>
+            <p class="">price: $400</p>
+            <p>Corrupti, culpa dicta totam dolor aliquid minus enim dignissimos provident mollitia perspiciatis voluptate nam quaerat unde illo delectus!</p>
+        </div>
+        <div class="food">
+            <img src="./nthy.jpg" alt="">
+            <h3 class="">food no 5</h3>
+            <p class="">price: $500</p>
+            <p>Nostrum, nobis dicta, velit dolorem possimus ea magnam tempore consequuntur architecto corporis ut quaerat dolor? Maxime, laudantium laborum.</p>
+        </div>
+        <div class="food">
+            <img src="./nthy.jpg" alt="">
+            <h3 class="">food no 6</h3>
+            <p class="">price: $600</p>
+            <p>Consequatur alias corporis repellat? Unde id consequatur, temporibus voluptas rem, dolores nobis quia culpa similique, sunt est accusantium!</p>
+        </div>
+        <div class="food">
+            <img src="./nthy.jpg" alt="">
+            <h3 class="">food no 7</h3>
+            <p class="">price: $700</p>
+            <p>Culpa reprehenderit nobis obcaecati aliquid sequi totam quidem officiis possimus alias! Aliquam omnis aspernatur provident suscipit reprehenderit deleniti?</p>
+        </div>
+        <div class="food">
+            <img src="./nthy.jpg" alt="">
+            <h3 class="">food no 8</h3>
+            <p class="">price: $800</p>
+            <p>Tempora quas ipsa accusamus similique provident ducimus dicta quod impedit cum ex. Quo ab ullam beatae aliquam architecto!</p>
+        </div>
+        <div class="food">
+            <img src="./nthy.jpg" alt="">
+            <h3 class="">food no 9</h3>
+            <p class="">price: $900</p>
+            <p>Sequi saepe sapiente eveniet libero aliquid sed dicta itaque, minus ut cum ex id neque soluta eius fugiat.</p>
+        </div>
+        <div class="food">
+            <img src="./nthy.jpg" alt="">
+            <h3 class="">food no 10</h3>
+            <p class="">price: $1000</p>
+            <p>Voluptatem, architecto. Animi, nostrum ea cumque ipsum odit temporibus saepe! Nemo tempora, ratione rem commodi qui vel debitis?</p>
+        </div>
+        <div class="food">
+            <img src="./nthy.jpg" alt="">
+            <h3 class="">food no 11</h3>
+            <p class="">price: $1100</p>
+            <p>Rerum, voluptatum ducimus voluptatibus deleniti ex laborum eius iste perferendis dolor obcaecati, soluta beatae hic velit quis officia.</p>
+        </div>
+        <div class="food">
+            <img src="./nthy.jpg" alt="">
+            <h3 class="">food no 12</h3>
+            <p class="">price: $1200</p>
+            <p>Consectetur fugit reprehenderit eos dolorem. Laborum eveniet asperiores quas voluptate repellat omnis eaque eligendi consequatur iure? Cum, adipisci!</p>
+        </div>
+        <div class="food">
+            <img src="./nthy.jpg" alt="">
+            <h3 class="">food no 13</h3>
+            <p class="">price: $1300</p>
+            <p>Aliquam ipsam rerum recusandae nihil hic iusto perferendis, tempora deserunt fugit nobis consequatur aperiam placeat reprehenderit excepturi expedita?</p>
+        </div>
+        <div class="food">
+            <img src="./nthy.jpg" alt="">
+            <h3 class="">food no 14</h3>
+            <p class="">price: $1400</p>
+            <p>Odio eius qui magnam, nam culpa at maxime corporis enim ducimus minus consequuntur quam recusandae incidunt amet? Soluta?</p>
+        </div>
+        <div class="food">
+            <img src="./nthy.jpg" alt="">
+            <h3 class="">food no 15</h3>
+            <p class="">price: $1500</p>
+            <p>Explicabo odio ratione voluptas vero inventore laboriosam, quod totam ad, magni quasi accusamus cupiditate doloribus repudiandae tenetur debitis.</p>
+        </div>
+        <div class="food">
+            <img src="./nthy.jpg" alt="">
+            <h3 class="">food no 16</h3>
+            <p class="">price: $1600</p>
+            <p>Harum nihil error a facere, aut, nisi molestias, quae laborum suscipit debitis nulla delectus animi sunt voluptate magnam.</p>
+        </div>
+        <div class="food">
+            <img src="./nthy.jpg" alt="">
+            <h3 class="">food no 17</h3>
+            <p class="">price: $1700</p>
+            <p>Cupiditate ullam dolore, quo quisquam tempora voluptatibus optio possimus voluptate dolores ea provident, alias porro odit beatae? Qui.</p>
+        </div>
+        <div class="food">
+            <img src="./nthy.jpg" alt="">
+            <h3 class="">food no 18</h3>
+            <p class="">price: $1800</p>
+            <p>Aliquam repellendus officiis error, aliquid itaque sunt ex vel in recusandae vitae repellat dolor quia qui mollitia incidunt!</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform s</title>
+    <style>
+        body{
+            background-color: black;
+            margin-top: 50px;
+            margin-left: 50px;
+        }
+        .container{
+            height: 200px;
+            width: 200px;
+            background-color: aqua;
+            border: 2px solid brown;
+        }
+        .child{
+            height: 200px;
+            width: 200px;
+            background-color: burlywood;
+            border: 2px solid yellow;
+        transform:rotate(-45deg) translatey(-100px) scale(0.5);
+        transition: transform 5s 0.25s, background-color 5s linear 0.25s;
+        }
+        .child1{
+            height: 200px;
+            width: 200px;
+            background-color: burlywood;
+            border: 2px solid yellow;
+            /* transform: scale(.25); */
+            transform:scale(.7) translatey(-50px) rotate(45deg) ;
+        }
+        .child:hover{
+            transform: rotate(45deg) translate(350px 120px);
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="child">Md Imran Hasan</div>
+        </div>
+        <div class="container">
+            <div class="child">Md Imran Hasan</div>
+        </div>
+        <div class="container">
+            <div class="child">Md Imran Hasan</div>
+        </div>
+        <div class="container">
+            <div class="child1">Md Imran Hasan</div>
+        </div>
+    </main>
+</body>
+</html>
