@@ -36,17 +36,22 @@ const addbtn =document.getElementById("btn")
 .addEventListener("click",()=>{
     const name =document.getElementById("name").value;
     const price =document.getElementById("price").value;
-    
+
+   if(name&&price){
     setTolocalStorage(name,price)
     displayCard()
+   }
+   
 
    document.getElementById("name").value=``
    document.getElementById("price").value=``
 })
 
 const displayCard =()=>{
+
     const container =document.getElementById("container")
-    const cards =getFromLocalStorage()
+    const cards =JSON.parse(localStorage.getItem("card"))
+    container.innerHTML=``
     for(const card in cards){
     const li =document.createElement("li")
     li.innerText=`${card} : ${cards[card]}`
@@ -70,3 +75,5 @@ const getFromLocalStorage=()=>{
     }
     return cards
 }
+
+displayCard()
