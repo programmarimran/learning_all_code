@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import PostChild from "./post";
+import {ErrorBoundary} from "react-error-boundary";
 
 export default  function PostFetch (){
     const postFetch =async()=>{
@@ -10,10 +11,18 @@ export default  function PostFetch (){
     return(
         
         <>
-       <h1 className="bg-red-600 text-black text-start">post:</h1>
-       <Suspense fallback={<h1>loading......</h1>}>
-       <PostChild post={fetchPost}></PostChild>
-       </Suspense>
+       
+       <ErrorBoundary fallback={<h1>Error dorsi..</h1>} >
+
+            <Suspense fallback={<h1>loading......</h1>}>
+            <PostChild post={fetchPost}></PostChild>
+            </Suspense>
+
+       </ErrorBoundary>
+       
         </>
     )
 }
+
+
+// // npm install react-error-boundary
