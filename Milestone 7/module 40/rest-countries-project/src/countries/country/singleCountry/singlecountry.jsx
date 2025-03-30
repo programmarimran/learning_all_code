@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 
-const Singlecountry = ({singleCountry}) => {
+const Singlecountry = ({singleCountry,handleVisitedCountry}) => {
    const [visited,setVisited]=useState(false)
-   const [count,setCount]=useState(0)
+//    console.log(handleVisitedCountry)
+
     const handleClick=()=>{
         // setVisited(true)
         // if(visited===true){
@@ -12,7 +13,8 @@ const Singlecountry = ({singleCountry}) => {
         //     setVisited(true)
         // }
         setVisited(!visited)
-        setCount(count+1)
+        handleVisitedCountry(singleCountry)
+       
     }
     return (
         <div className={` border-4  border-red-500 rounded-2xl flex flex-col justify-between gap-3 p-6 ${visited&&"bg-yellow-50"}`}>
