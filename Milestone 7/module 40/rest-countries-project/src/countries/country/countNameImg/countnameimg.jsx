@@ -5,9 +5,9 @@ const Countnameimg = ({country}) => {
     return (
         <div>
             <div className={` border-4  border-red-500 rounded-2xl flex justify-between flex-col p-6 h-full `}>
-            <h1>Name: {country.name.common} </h1>
+            <p className='text-start'>Name: {country.name.common} </p>
       
-           <img src={country.flags.png} alt="" />
+           <img className='w-[50%]' src={country.flags.png} alt="" />
          
       
             </div>

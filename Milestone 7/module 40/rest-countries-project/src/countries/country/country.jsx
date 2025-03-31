@@ -17,7 +17,7 @@ const Country = ({countrys}) => {
             <h1 className='m-8'>Visited Country: {visitedCountry.length}</h1>
 
          
-           <div className='grid grid-cols-3 gap-4 border border-4 border-amber-500 p-8 m-8'>
+           <div className='grid grid-cols-4 gap-4 border border-4 border-amber-500 p-8 m-8'>
             {
                 visitedCountry.map(country=><Countnameimg key={country.flags.png} country={country}></Countnameimg>)
             }
