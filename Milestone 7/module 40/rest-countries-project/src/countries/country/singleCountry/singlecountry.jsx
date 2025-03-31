@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Singlecountry = ({singleCountry,handleVisitedCountry}) => {
    const [visited,setVisited]=useState(false)
-//    console.log(handleVisitedCountry)
+
 
     const handleClick=()=>{
         // setVisited(true)
@@ -13,7 +13,13 @@ const Singlecountry = ({singleCountry,handleVisitedCountry}) => {
         //     setVisited(true)
         // }
         setVisited(!visited)
-        handleVisitedCountry(singleCountry)
+
+    handleVisitedCountry(singleCountry)
+
+
+   
+        
+        
        
     }
     return (
@@ -27,6 +33,7 @@ const Singlecountry = ({singleCountry,handleVisitedCountry}) => {
             {visited?"visited":"not visited"}
           
            </button>
+        
           
       
            
