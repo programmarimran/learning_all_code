@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "name": "console.log()",
+      "type": "Debugging",
+      "price": 0,
+      "description": "Logs output to the console"
+    },
+    {
+      "id": 2,
+      "name": "setTimeout()",
+      "type": "Timing",
+      "price": 5,
+      "description": "Executes a function after a delay"
+    },
+    {
+      "id": 3,
+      "name": "Array.map()",
+      "type": "Array",
+      "price": 15,
+      "description": "Creates a new array by applying a function to each element"
+    },
+    {
+      "id": 4,
+      "name": "JSON.stringify()",
+      "type": "JSON",
+      "price": 12,
+      "description": "Converts an object to a JSON string"
+    },
+    {
+      "id": 5,
+      "name": "fetch()",
+      "type": "API",
+      "price": 25,
+      "description": "Fetches data from a server"
+    }
+  ]
+  
