@@ -1,0 +1,16 @@
+.selected-card{
+    border: 3px solid tomato;
+    border-radius: 18px;
+    padding: 6px;
+    margin: 16px auto;
+
+}
+.selected-card img{
+    width: 100px;
+    border-radius: 16px;
+    margin:0, auto;
+}
+.selected-card-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+}

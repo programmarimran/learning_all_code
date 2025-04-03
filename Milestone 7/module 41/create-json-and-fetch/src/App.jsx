@@ -12,9 +12,12 @@ function App() {
     <Suspense fallback={<h3>bottle is pending....</h3>}> 
       <Bottles bottlesPromise={bottlesPromise}></Bottles>
     </Suspense>
+    
 
     </>
   )
 }
 
 export default App
+
+

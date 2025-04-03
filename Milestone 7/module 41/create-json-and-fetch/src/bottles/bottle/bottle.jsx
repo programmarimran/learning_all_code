@@ -1,9 +1,10 @@
 import React from 'react';
 import './bottle.css'
+import { addToCardLocalStorage } from '../../utilities/localstorage';
 
 const Bottle = ({bottle,handleCount}) => {
  
-    const {price,category,img,name}=bottle
+    const {price,category,img,name,id}=bottle
     return (
         <div className='card'>
             <p>{category}</p>
@@ -11,7 +12,10 @@ const Bottle = ({bottle,handleCount}) => {
             <p>{price}</p>
             <img src={img} alt="" />
             <br />
-            <button onClick={()=>{handleCount()}}>Buy</button>
+            <button onClick={()=>{
+                handleCount(bottle)
+                addToCardLocalStorage(id)
+                }}>Buy</button>
         </div>
     );
 };
