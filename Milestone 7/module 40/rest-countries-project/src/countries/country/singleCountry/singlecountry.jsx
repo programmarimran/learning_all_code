@@ -14,7 +14,11 @@ const Singlecountry = ({singleCountry,handleVisitedCountry}) => {
         // }
         setVisited(!visited)
 
-    handleVisitedCountry(singleCountry)
+     
+            handleVisitedCountry(singleCountry)
+      
+        
+    
 
 
    

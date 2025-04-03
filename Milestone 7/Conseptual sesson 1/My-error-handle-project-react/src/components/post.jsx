@@ -6,7 +6,7 @@ export default function PostChild({post}){
     return(
         <>
         <div>
-            <h3>Post: {postData.length}</h3>
+            <h3 className="">Post: {postData.length}</h3>
         </div>
         </>
     )

@@ -1,5 +1,6 @@
 import './App.css'
 export default function Object({name}){
+    
     return(
         < >
        <div className='style'>
