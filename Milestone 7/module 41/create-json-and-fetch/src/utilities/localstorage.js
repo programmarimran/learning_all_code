@@ -15,7 +15,7 @@ const addToCardLocalStorage=(id)=>{
 }
 const setToLocalStorage=(card)=>{
     const cardStringfy=JSON.stringify(card)
-    localStorage.setItem("card",cardStringfy)
+    cardStringfy&&localStorage.setItem("card",cardStringfy)
 }
 const removeFromLocalStorage=(id)=>{
     const totalBottle=getFromLocalStorage()

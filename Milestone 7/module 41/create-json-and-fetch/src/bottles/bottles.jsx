@@ -21,6 +21,8 @@ export const Bottles=({bottlesPromise})=>{
         setCount(finalcardBottle)
     },[bottles])
     const handleCount=(bottle)=>{
+    //    const filteredBottle=count.filter(bottlF=>bottlF!==bottle)
+    //    console.log(filteredBottle)
         const newBottle=[...count,bottle]
         setCount(newBottle)
     }
