@@ -1,0 +1,19 @@
+.catagory{
+    border: 2px solid green;
+    border-radius: 16px;
+    padding: 12px;
+
+}
+.catagory-container{
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    
+}
+.catagory-container h1:hover{
+    background-color: aquamarine;
+    color: red;
+    cursor: pointer;
+}

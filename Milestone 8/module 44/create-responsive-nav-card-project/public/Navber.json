@@ -1,0 +1,25 @@
+{
+    "user": {
+      "name": "Imran Hossain",
+      "profilePicture": "https://i.ibb.co.com/6JnMZ2Pv/login-banner.webp",
+      "pageName": "Dashboard"
+    },
+    "navbar": [
+      {
+        "id": 1,
+        "label": "Home",
+        "url": "/home"
+      },
+      {
+        "id": 2,
+        "label": "Projects",
+        "url": "/projects"
+      },
+      {
+        "id": 3,
+        "label": "Contact",
+        "url": "/contact"
+      }
+    ]
+  }
+  

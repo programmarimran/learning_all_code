@@ -1,0 +1,17 @@
+
+nav{
+  display: flex;
+  justify-content: space-between;
+  border: 3px solid brown;
+  font-size: xx-large;
+  padding: 8px;
+  border-radius: 16px;
+  
+}
+nav h1{
+  cursor: pointer;
+}
+nav div{
+  display: flex;
+  gap: 24px;
+}
