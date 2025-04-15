@@ -40,7 +40,8 @@ const router=createBrowserRouter([
       Component:ShowDetails
      }
     ]
-  }
+  },
+  {path:'*',element:<h1>Page is not status 404 is not found</h1>}
  
 ])
 createRoot(document.getElementById('root')).render(
