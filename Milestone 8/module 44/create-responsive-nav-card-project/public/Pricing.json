@@ -1,0 +1,42 @@
+[
+    {
+      "id": 1,
+      "title": "Free",
+      "price": "$0",
+      "features": [
+        "1 user included",
+        "5GB storage",
+        "Email support",
+        "Access to community"
+      ],
+      "buttonText": "Sign up for free",
+      "highlighted": false
+    },
+    {
+      "id": 2,
+      "title": "Pro",
+      "price": "$15",
+      "features": [
+        "5 users included",
+        "50GB storage",
+        "Priority email support",
+        "Help center access"
+      ],
+      "buttonText": "Get started",
+      "highlighted": true
+    },
+    {
+      "id": 3,
+      "title": "Enterprise",
+      "price": "$29",
+      "features": [
+        "Unlimited users",
+        "500GB storage",
+        "Phone & email support",
+        "Customizable features"
+      ],
+      "buttonText": "Contact us",
+      "highlighted": false
+    }
+  ]
+  

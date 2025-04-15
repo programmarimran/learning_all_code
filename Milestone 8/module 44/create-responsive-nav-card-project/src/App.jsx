@@ -1,13 +1,13 @@
 import './App.css'
-import DaisyNav from './DaisyNav/DaisyNav'
-import Navber from './Navber/Navber'
+import Compunents from './Compunents/Compunents'
+
+
 
 function App() {
 
   return (
     <div>
-      <Navber></Navber>
-      <DaisyNav></DaisyNav>
+      <Compunents></Compunents>
     </div>
   )
 }

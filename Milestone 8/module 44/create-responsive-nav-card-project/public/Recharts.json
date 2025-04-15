@@ -1,0 +1,8 @@
+[
+    { "month": "জানুয়ারি", "donation": 5000, "expense": 3000 },
+    { "month": "ফেব্রুয়ারি", "donation": 4500, "expense": 3200 },
+    { "month": "মার্চ", "donation": 6000, "expense": 4000 },
+    { "month": "এপ্রিল", "donation": 5500, "expense": 3700 },
+    { "month": "মে", "donation": 7000, "expense": 5000 }
+  ]
+  

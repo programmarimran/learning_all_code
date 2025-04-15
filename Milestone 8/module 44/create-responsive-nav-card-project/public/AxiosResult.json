@@ -1,0 +1,43 @@
+[
+    {
+      "name": "Bob Smith",
+      "id": "STU1002",
+      "result": {
+        "chemistry": 85,
+        "math": 92,
+        "physics": 78,
+        "english": 88
+      }
+    },
+    {
+      "name": "Charlie Brown",
+      "id": "STU1003",
+      "result": {
+        "chemistry": 75,
+        "math": 68,
+        "physics": 80,
+        "english": 72
+      }
+    },
+    {
+      "name": "David Wilson",
+      "id": "STU1004",
+      "result": {
+        "chemistry": 90,
+        "math": 95,
+        "physics": 92,
+        "english": 93
+      }
+    },
+    {
+      "name": "Eva Green",
+      "id": "STU1005",
+      "result": {
+        "chemistry": 88,
+        "math": 76,
+        "physics": 84,
+        "english": 91
+      }
+    }
+  ]
+  
