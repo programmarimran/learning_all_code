@@ -7,9 +7,9 @@ import Footer from './Footer/Footer';
 
 const Root = () => {
     return (
-        <div className='min-h-screen flex flex-col'>
+        <div className='min-h-screen flex flex-col max-w-7xl mx-auto'>
             <Navber></Navber>
-            <div className=' flex-grow '><Outlet></Outlet></div>
+            <div className=''><Outlet></Outlet></div>
             <Footer></Footer>
         </div>
     );
