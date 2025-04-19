@@ -5,7 +5,7 @@ const Navber = () => {
     const links=<>
     <NavLink to='/'><li className='mx-4'>Home</li></NavLink>
     <NavLink to='/about'><li className='mx-4'>About</li></NavLink>
-    <li className='mx-4'>Blog</li>
+    <NavLink to='/readList'><li className='mx-4'>Read List</li></NavLink>
     </>
     return (
         <div className="navbar bg-base-100 shadow-sm">
@@ -20,7 +20,7 @@ const Navber = () => {
               {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className="btn btn-ghost text-xl">Boi Poka</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -28,7 +28,7 @@ const Navber = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Button</a>
+          <img className='w-12 h-12 rounded-full' src="https://i.ibb.co.com/JRw8FNzT/cao5-FKvu-D6-PY7j-Oolqaq-Ukl2stx1-profile.jpg" alt="" />
         </div>
       </div>
     );

@@ -5,6 +5,7 @@ import Home from '../Pages/Home/Home';
 import About from '../Conponents/About/About';
 import axios from 'axios';
 import CardDetails from '../Conponents/CardDetails/CardDetails';
+import ReadList from '../Conponents/ReadList/ReadList';
 
   export const router=createBrowserRouter([
      {
@@ -13,12 +14,25 @@ import CardDetails from '../Conponents/CardDetails/CardDetails';
        children:[
         {
           index:true,
-          loader:()=>axios(`https://raw.githubusercontent.com/ProgrammingHero1/boi-poka-Book-Vibe-Resources/refs/heads/main/data/booksData.json`),
           path:'/',
+          loader:()=>axios(`https://raw.githubusercontent.com/ProgrammingHero1/boi-poka-Book-Vibe-Resources/refs/heads/main/data/booksData.json`),
           Component:Home
         },
         {path:'about',Component:About},
-        {path:'/cardDetails/:id',Component:CardDetails}
+        {
+          path:'/cardDetails/:id',
+          loader:()=>axios(`https://raw.githubusercontent.com/ProgrammingHero1/boi-poka-Book-Vibe-Resources/refs/heads/main/data/booksData.json`),
+          Component:CardDetails
+        },
+        {
+          path:'/readList',
+          loader:()=>axios(`https://raw.githubusercontent.com/ProgrammingHero1/boi-poka-Book-Vibe-Resources/refs/heads/main/data/booksData.json`),
+          Component:ReadList
+        },
+        {
+          path:'*',
+          element:<h1> page not found 404</h1>
+        }
         
        ]
      }
