@@ -20,8 +20,8 @@ function App() {
       {/* <ControlldFormField></ControlldFormField> */}
       {/* <UncontrolledInputField></UncontrolledInputField> */}
       {/* <HookForm></HookForm> */}
-      {/* <ProductManagement></ProductManagement> */}
-      <FamilyTree></FamilyTree>
+      <ProductManagement></ProductManagement>
+      {/* <FamilyTree></FamilyTree> */}
       
     </>
   )
