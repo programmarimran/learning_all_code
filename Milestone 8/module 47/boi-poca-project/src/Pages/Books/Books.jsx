@@ -4,7 +4,7 @@ import { DataContext } from "../Home/Home";
 import Book from "../../Conponents/Book/Book";
 
 const Books = () => {
- const data=useContext(DataContext)
+ const{ data}=useContext(DataContext)
  const [showAll,setShowAll]=useState(false)
  const handleShowAll =()=>{
   setShowAll(!showAll)
@@ -16,6 +16,9 @@ const Books = () => {
   !showAll&&window.scrollTo(0,650)
  },[data,showAll])
 //  console.log(data.slice(0,4),showAll)
+
+//search bar handle start
+
   return(
     <>
     <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">

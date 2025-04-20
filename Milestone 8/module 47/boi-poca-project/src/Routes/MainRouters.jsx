@@ -15,6 +15,7 @@ import ReadList from '../Conponents/ReadList/ReadList';
         {
           index:true,
           path:'/',
+          hydrateFallbackElement:<p className=' text-center text-green-500'>Please wait data is loading.......</p>,
           loader:()=>axios(`https://raw.githubusercontent.com/ProgrammingHero1/boi-poka-Book-Vibe-Resources/refs/heads/main/data/booksData.json`),
           Component:Home
         },
