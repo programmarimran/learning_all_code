@@ -15,9 +15,9 @@ const Book = ({ book }) => {
   // console.log(book);
   return (
     <NavLink to={`/cardDetails/${bookId}`}>
-      <div className="card w-[250px] mx-auto md:w-md h-full bg-base-100 w-96 shadow-md border border-gray-100 mx-auto">
+      <div className="card  max-w-sm mx-auto md:w-md h-full bg-base-100 shadow-md border border-gray-100 mx-auto">
         <figure className="p-4 bg-gray-100 w-2/3 mx-auto m-3">
-          <img className=" h-[166px]" src={image} alt="Shoes" />
+          <img className=" max-w-sm h-[166px]" src={image} alt="Shoes" />
         </figure>
         <div className="card-body">
           <h2 className="card-title">
