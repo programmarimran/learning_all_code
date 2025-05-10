@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Samsung Galaxy S24",
+    "price": 899,
+    "description": "Flagship smartphone with high-end features and performance.",
+    "image": "https://example.com/images/samsung-galaxy-s24.jpg"
+  },
+  {
+    "id": 2,
+    "name": "iPhone 15 Pro",
+    "price": 1099,
+    "description": "Apple's premium smartphone with A17 chip and titanium body.",
+    "image": "https://example.com/images/iphone-15-pro.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Google Pixel 8",
+    "price": 799,
+    "description": "Clean Android experience with exceptional camera features.",
+    "image": "https://example.com/images/google-pixel-8.jpg"
+  },
+  {
+    "id": 4,
+    "name": "OnePlus 12",
+    "price": 749,
+    "description": "Fast and smooth performance with premium design.",
+    "image": "https://example.com/images/oneplus-12.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Xiaomi 14 Pro",
+    "price": 699,
+    "description": "Powerful specs and great value for money.",
+    "image": "https://example.com/images/xiaomi-14-pro.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Realme GT 5 Pro",
+    "price": 649,
+    "description": "Affordable flagship killer with impressive features.",
+    "image": "https://example.com/images/realme-gt-5-pro.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Motorola Edge+ 2024",
+    "price": 799,
+    "description": "Clean Android and solid performance with curved display.",
+    "image": "https://example.com/images/motorola-edge-plus.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Asus ROG Phone 8",
+    "price": 999,
+    "description": "Gaming beast with high refresh rate and shoulder triggers.",
+    "image": "https://example.com/images/asus-rog-phone-8.jpg"
+  },
+  {
+    "id": 9,
+    "name": "Nokia XR21",
+    "price": 549,
+    "description": "Rugged smartphone built to withstand tough environments.",
+    "image": "https://example.com/images/nokia-xr21.jpg"
+  },
+  {
+    "id": 10,
+    "name": "Infinix Zero 30 5G",
+    "price": 299,
+    "description": "Budget-friendly phone with stylish design and good specs.",
+    "image": "https://example.com/images/infinix-zero-30.jpg"
+  }
+]
