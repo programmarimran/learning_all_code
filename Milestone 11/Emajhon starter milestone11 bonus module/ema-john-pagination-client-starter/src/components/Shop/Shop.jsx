@@ -8,13 +8,17 @@ import Cart from "../Cart/Cart";
 import Product from "../Product/Product";
 import "./Shop.css";
 import { Link, useLoaderData } from "react-router-dom";
+import cartProductsLoader from "../../loaders/cartProductsLoader";
 
 const Shop = () => {
+  const storedCart = getShoppingCart();
+  const ids = Object.keys(storedCart);
   const { count } = useLoaderData();
   // console.log(count);
   const [products, setProducts] = useState([]);
   // console.log(products);
   const [cart, setCart] = useState([]);
+
   const [documentPerPage, setDocumentPerPage] = useState(10);
   // console.log(documentPerPage);
   const [currentPage, setCurrentPage] = useState(0);
@@ -53,10 +57,10 @@ const Shop = () => {
       // console.log('added Product', addedProduct)
     }
     // step 5: set the cart
-    setCart(savedCart);
+    // setCart(savedCart);
   }, [products]);
 
-  const handleAddToCart = (product) => {
+  const handleAddToCart = async (product) => {
     // cart.push(product); '
     let newCart = [];
     // const newCart = [...cart, product];
@@ -72,8 +76,10 @@ const Shop = () => {
       newCart = [...remaining, exists];
     }
 
-    setCart(newCart);
     addToDb(product._id);
+    const c = await cartProductsLoader();
+    console.log(c);
+    setCart(c);
   };
 
   const handleClearCart = () => {
@@ -88,6 +94,14 @@ const Shop = () => {
       setCurrentPage(currentPage + 1);
     }
   };
+  useEffect(() => {
+    const getCart = async () => {
+      const c = await cartProductsLoader();
+      console.log(c);
+      setCart(c);
+    };
+    getCart();
+  }, []);
   return (
     <div className="shop-container">
       <div className="products-container">

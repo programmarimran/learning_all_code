@@ -30,7 +30,7 @@ const cartProductsLoader = async () => {
   // return [products, savedCart]
   // another options
   // return { products, cart: savedCart }
-
+// console.log(savedCart)
   return savedCart;
 };
 
