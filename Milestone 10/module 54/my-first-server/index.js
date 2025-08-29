@@ -5,7 +5,7 @@ const port=process.env.PORT|| 3000;
 app.use(express.json())
 app.use(cors())
 const profile=[
-    {id:1,name:"Imran",email:"imran@gmail.com"},
+    {id:1,name:"Imran",email:"infosponsor2@gmail.com"},
     {id:2,name:"Anisul",email:"anisul@gmail.com"},
     {id:3,name:"Taiyeb",email:"taiteb@gmail.com"}
 ]

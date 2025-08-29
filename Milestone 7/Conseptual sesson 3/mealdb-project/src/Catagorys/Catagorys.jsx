@@ -8,7 +8,7 @@ const Catagorys = ({setCatagory}) => {
         .then(res=>res.json())
         .then(data=>setCatagorys(data.categories))
     },[])
-    
+    // console.log(catagorys)
     
     return (
         <div className='catagory-container'>
@@ -22,4 +22,4 @@ const Catagorys = ({setCatagory}) => {
 export default Catagorys;
 
 // all catagorys   https://www.themealdb.com/api/json/v1/1/categories.php
-// filterby catagory  https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood
+// filterby      https://www.themealdb.com/api/json/v1/1/filter.php?c=Seafood

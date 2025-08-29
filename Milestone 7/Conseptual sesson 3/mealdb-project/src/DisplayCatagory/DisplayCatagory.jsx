@@ -7,7 +7,7 @@ const DisplayCatagory = ({ catagory }) => {
       .then((res) => res.json())
       .then((data) => setSingleCatagory(data.meals));
   }, [catagory]);
-  console.log(singleCatagory);
+  // console.log(singleCatagory);
   return (
     <div>
       <div className="display-container">

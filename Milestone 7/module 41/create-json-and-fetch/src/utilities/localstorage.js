@@ -10,6 +10,13 @@ const getFromLocalStorage=()=>{
 }
 const addToCardLocalStorage=(id)=>{
     const card=getFromLocalStorage()
+    console.log(card)
+    const findCard=card.find(item=>item===id)
+    // console.log(findCard)
+    if(findCard){
+        console.log("doplicate found")
+        return 
+    }
     card.push(id)
     setToLocalStorage(card)
 }

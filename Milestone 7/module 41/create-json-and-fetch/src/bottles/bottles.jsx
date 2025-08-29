@@ -19,18 +19,29 @@ export const Bottles=({bottlesPromise})=>{
             
         }
         setCount(finalcardBottle)
-    },[bottles])
+    },[])
+    
     const handleCount=(bottle)=>{
-    //    const filteredBottle=count.filter(bottlF=>bottlF!==bottle)
-    //    console.log(filteredBottle)
+        console.log(bottle)
+       const filteredBottle=count.find(bottlF=>bottlF.id===bottle.id)
+      
+       if(filteredBottle){
+        console.log("doplicate found")
+        
+       }
+       else{
+        console.log("else ")
         const newBottle=[...count,bottle]
         setCount(newBottle)
+       }
+        
     }
     const handleRemove=(id)=>{
         const currentBottle=count.filter(bottle=>bottle.id!==id)
         setCount(currentBottle)
         removeFromLocalStorage(id)
     }
+    console.log(count)
     return(
         <>
         <h1>Added : {count.length} </h1>

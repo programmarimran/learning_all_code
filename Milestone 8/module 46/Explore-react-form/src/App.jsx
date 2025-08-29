@@ -14,7 +14,7 @@ function App() {
   return (
     <>
       
-      <h1>Explore React form</h1>
+      <h1 className='font-thin'>Explore React form</h1>
       {/* <SimpleForm></SimpleForm> */}
       {/* <FormAction></FormAction> */}
       {/* <ControlldFormField></ControlldFormField> */}
