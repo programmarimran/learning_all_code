@@ -1,19 +1,22 @@
 "use client"
+import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { use } from 'react';
 
 const Navbar = () => {
   const pathname=usePathname();
-    console.log(pathname);
+    // console.log(pathname);
     if(pathname.includes("dashboard")){
         return null;
     }
     return (
         <div className='flex justify-between items-center p-5 '>
             <h1 className="text-3xl font-bold underline">Hello, Next.js!</h1>
-            <ul className=' gap-4 flex items-center'><li>home </li>
-            <li>item </li>
-            <li>about</li></ul>
+            <ul className=' gap-4 flex items-center'>
+            <Link href={"/"}> <li>home</li></Link>
+            <Link href={"/product"}> <li>product</li></Link>
+           <Link href={"/about"}> <li>about</li></Link>
+            </ul>
             <button>Log In</button>
         </div>
     );
