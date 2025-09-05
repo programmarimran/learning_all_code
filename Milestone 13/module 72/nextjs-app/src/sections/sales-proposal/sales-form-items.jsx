@@ -1,5 +1,6 @@
-'use client';
-import React, { useState, useEffect } from 'react';
+"use client";
+
+import React, { useState, useEffect } from "react";
 import {
   Box,
   Grid,
@@ -11,8 +12,6 @@ import {
   Typography,
   Switch,
   FormControlLabel,
-  Chip,
-  Autocomplete,
   Paper,
   Button,
   Table,
@@ -22,50 +21,37 @@ import {
   TableHead,
   TableRow,
   IconButton,
-} from '@mui/material';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { useForm, Controller } from 'react-hook-form';
-import { Icon } from '@iconify/react';
-import dayjs from 'dayjs';
+} from "@mui/material";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { useForm, Controller } from "react-hook-form";
+import { Icon } from "@iconify/react";
+import dayjs from "dayjs";
 
 const CombinedForm = ({ sales, items }) => {
-  const [selectedItem, setSelectedItem] = useState('');
+  const [selectedItem, setSelectedItem] = useState("");
   const [selectedOptions, setSelectedOptions] = useState(null);
   const [newRows, setNewRows] = useState([]);
 
   const { control, handleSubmit, setValue, watch } = useForm({
     defaultValues: {
-      // Sales fields
-      subject: '',
-      related: '',
+      subject: "",
+      related: "",
+      lead_or_customer: "",
       date: dayjs(),
       open_till: dayjs(),
-      currency: '',
-      discount_type: '',
+      currency: "BDT",
+      discount_type: "no_discount",
       tags: [],
       allowComments: true,
-      status: 'Draft',
-      assigned: '',
-      to: '',
-      amount: 0,
-      payment_mode: '',
-      // Item fields
-      item: '',
-      description: '',
-      expirationDate: null,
-      brand: '',
-      sku1: '',
-      width: '',
-      hsnCode: '',
-      sn: '',
-      imei: '',
-      expiryDate: null,
-      qty: '',
-      rate: '',
-      tax: '',
-      item_amount: '',
+      status: "draft",
+      assigned: "",
+      to: "",
+      payment_mode: "installment",
+      // extra for schedule
+      advance_payment: 0,
+      rest_amount: 0,
     },
   });
 
@@ -79,94 +65,88 @@ const CombinedForm = ({ sales, items }) => {
 
   useEffect(() => {
     if (selectedOptions) {
-      setValue('item', selectedOptions.name || '');
-      setValue(
-        'description',
-        selectedOptions.description || selectedOptions.long_description || ''
-      );
-      setValue('expirationDate', selectedOptions.expiration_date || null);
-      setValue('brand', selectedOptions.item_group || '');
-      setValue('sku1', selectedOptions.sku || '');
-      setValue('width', selectedOptions.width || '');
-      setValue('hsnCode', selectedOptions.hsn_code || '');
-      setValue('sn', selectedOptions.serial_number || '');
-      setValue('imei', selectedOptions.imei || '');
-      setValue('expiryDate', selectedOptions.expiry_date || null);
-      setValue('qty', selectedOptions.quantity || '');
-      setValue('rate', selectedOptions.price || '');
-      setValue('tax', selectedOptions.tax_1 || '');
-      setValue(
-        'item_amount',
-        selectedOptions.quantity && selectedOptions.price
-          ? selectedOptions.quantity * parseFloat(selectedOptions.price)
-          : ''
-      );
+      setValue("item", selectedOptions.name || "");
+      setValue("qty", 1);
+      setValue("rate", selectedOptions.price || "");
     }
   }, [selectedOptions]);
 
   // --- ADD ITEM ROW ---
   const addItemRow = () => {
+    if (!selectedItem) return;
+    const option = items.find((i) => i.id === selectedItem);
     const itemData = {
-      item: watch('item'),
-      description: watch('description'),
-      expirationDate: watch('expirationDate'),
-      brand: watch('brand'),
-      sku1: watch('sku1'),
-      width: watch('width'),
-      hsnCode: watch('hsnCode'),
-      sn: watch('sn'),
-      imei: watch('imei'),
-      expiryDate: watch('expiryDate'),
-      qty: watch('qty'),
-      rate: watch('rate'),
-      tax: watch('tax'),
-      amount: watch('item_amount'),
-      id: `item-${Math.floor(Math.random() * 1000000)}`,
+      item_id: option.id,
+      quantity: option.quantity,
     };
     setNewRows([...newRows, itemData]);
+    setSelectedItem("");
   };
 
   const removeRow = (id) => {
-    setNewRows(newRows.filter((r) => r.id !== id));
+    setNewRows(newRows.filter((r) => r.item_id !== id));
   };
 
   const onSubmit = (data) => {
     const payload = {
-      ...data,
-      date: data.date.format('YYYY-MM-DD'),
-      open_till: data.open_till.format('YYYY-MM-DD'),
-      tags: data.tags.join(','),
-      to: sales.vendor,
+      subject: data.subject,
+      related: data.related,
+      lead_or_customer: 1, // example: lead/customer id
+      date: data.date.format("YYYY-MM-DD"),
+      open_till: data.open_till.format("YYYY-MM-DD"),
+      currency: data.currency,
+      discount_type: data.discount_type,
+      payment_mode: data.payment_mode,
+      tags: data.tags.length ? data.tags.join(",") : "",
+      status: data.status,
+      assigned: data.assigned,
+      to: sales.vendor?.id || 2, // example vendor id
       items: newRows,
+      payment_schedule: {
+        advance_payment: Number(data.advance_payment) || 200000.0,
+        rest_amount: Number(data.rest_amount) || 800000,
+        installments: [
+          {
+            payment_time: "2025-11-01",
+            payment_amount: 400000,
+            status: "unpaid",
+          },
+          {
+            payment_time: "2025-12-01",
+            payment_amount: 400000,
+            status: "unpaid",
+          },
+        ],
+      },
     };
-    console.log('FINAL PAYLOAD:', payload);
-    // send payload to backend here
+
+    console.log("FINAL PAYLOAD:", payload);
+    alert("Form submitted! Check console for payload.");
   };
 
-  const currencyOptions = ['EUR €', 'USD $', 'GBP £', 'JPY ¥'];
-  const discountOptions = ['No discount', 'Before Tax', 'After Tax'];
-  const paymentModeOptions = ['installment', 'completed', 'pending'];
-  const statusOptions = ['Draft', 'Sent', 'Accepted', 'Declined'];
-  const assignedOptions = ['John Doe', 'Jane Smith', 'Admin User'];
-  const relatedOptions = ['Lead', 'Customer'];
-  const tagOptions = ['Laptop', 'PC', 'Pencil'];
-  const userToArray = Object.entries(sales.vendor).map(([k, v]) => `${k}=${v}`);
+  const relatedOptions = ["lead", "customer"];
+  const statusOptions = ["draft", "sent", "accepted", "declined"];
+  const assignedOptions = ["John Doe", "Jane Smith", "Admin User"];
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <Paper elevation={0} sx={{ p: 3, backgroundColor: '#f8f9fa' }}>
+      <Paper elevation={0} sx={{ p: 3, backgroundColor: "#f8f9fa" }}>
         <form onSubmit={handleSubmit(onSubmit)}>
-          {/* --- SALES PROPOSAL FIELDS --- */}
           <Grid container spacing={3}>
             {/* Left Column */}
             <Grid item xs={12} md={6}>
-              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+              <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
                 {/* Subject */}
                 <Controller
                   name="subject"
                   control={control}
                   render={({ field }) => (
-                    <TextField {...field} label="Subject" fullWidth variant="outlined" />
+                    <TextField
+                      {...field}
+                      label="Subject"
+                      fullWidth
+                      variant="outlined"
+                    />
                   )}
                 />
                 {/* Related */}
@@ -191,14 +171,18 @@ const CombinedForm = ({ sales, items }) => {
                     <Controller
                       name="date"
                       control={control}
-                      render={({ field }) => <DatePicker {...field} format="DD-MM-YYYY" />}
+                      render={({ field }) => (
+                        <DatePicker {...field} format="DD-MM-YYYY" />
+                      )}
                     />
                   </Grid>
                   <Grid item xs={6}>
                     <Controller
                       name="open_till"
                       control={control}
-                      render={({ field }) => <DatePicker {...field} format="DD-MM-YYYY" />}
+                      render={({ field }) => (
+                        <DatePicker {...field} format="DD-MM-YYYY" />
+                      )}
                     />
                   </Grid>
                 </Grid>
@@ -206,7 +190,7 @@ const CombinedForm = ({ sales, items }) => {
             </Grid>
             {/* Right Column */}
             <Grid item xs={12} md={6}>
-              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
+              <Box sx={{ display: "flex", flexDirection: "column", gap: 3 }}>
                 {/* Status */}
                 <Controller
                   name="status"
@@ -243,7 +227,7 @@ const CombinedForm = ({ sales, items }) => {
             </Grid>
           </Grid>
 
-          {/* --- ITEM SELECT & FORM --- */}
+          {/* --- ITEM SELECT & ADD --- */}
           <Box sx={{ mt: 4, mb: 2 }}>
             <Grid container spacing={2} alignItems="center">
               <Grid item xs={8}>
@@ -272,37 +256,22 @@ const CombinedForm = ({ sales, items }) => {
           <TableContainer component={Paper} sx={{ mt: 2 }}>
             <Table size="small">
               <TableHead>
-                <TableRow sx={{ backgroundColor: '#e3f2fd' }}>
-                  {[
-                    'Item',
-                    'Description',
-                    'ExpirationDate',
-                    'Brand',
-                    'SKU1',
-                    'Qty',
-                    'Rate',
-                    'Tax',
-                    'Amount',
-                    'Actions',
-                  ].map((h) => (
+                <TableRow sx={{ backgroundColor: "#e3f2fd" }}>
+                  {["Item ID", "Quantity", "Actions"].map((h) => (
                     <TableCell key={h}>{h}</TableCell>
                   ))}
                 </TableRow>
               </TableHead>
               <TableBody>
                 {newRows.map((row) => (
-                  <TableRow key={row.id}>
-                    <TableCell>{row.item}</TableCell>
-                    <TableCell>{row.description}</TableCell>
-                    <TableCell>{row.expirationDate}</TableCell>
-                    <TableCell>{row.brand}</TableCell>
-                    <TableCell>{row.sku1}</TableCell>
-                    <TableCell>{row.qty}</TableCell>
-                    <TableCell>{row.rate}</TableCell>
-                    <TableCell>{row.tax}</TableCell>
-                    <TableCell>{row.amount}</TableCell>
+                  <TableRow key={row.item_id}>
+                    <TableCell>{row.item_id}</TableCell>
+                    <TableCell>{row.quantity}</TableCell>
                     <TableCell>
-                      <IconButton onClick={() => removeRow(row.id)} color="error">
+                      <IconButton
+                        onClick={() => removeRow(row.item_id)}
+                        color="error"
+                      >
                         <Icon icon="mdi:delete" width="24" />
                       </IconButton>
                     </TableCell>
@@ -312,8 +281,35 @@ const CombinedForm = ({ sales, items }) => {
             </Table>
           </TableContainer>
 
+          {/* --- PAYMENT SCHEDULE (Optional inputs) --- */}
+          <Grid container spacing={2} sx={{ mt: 2 }}>
+            <Grid item xs={6}>
+              <Controller
+                name="advance_payment"
+                control={control}
+                render={({ field }) => (
+                  <TextField {...field} label="Advance Payment" fullWidth />
+                )}
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <Controller
+                name="rest_amount"
+                control={control}
+                render={({ field }) => (
+                  <TextField {...field} label="Rest Amount" fullWidth />
+                )}
+              />
+            </Grid>
+          </Grid>
+
           {/* --- FINAL SUBMIT BUTTON --- */}
-          <Button type="submit" variant="contained" color="primary" sx={{ mt: 3 }}>
+          <Button
+            type="submit"
+            variant="contained"
+            color="primary"
+            sx={{ mt: 3 }}
+          >
             Save All
           </Button>
         </form>

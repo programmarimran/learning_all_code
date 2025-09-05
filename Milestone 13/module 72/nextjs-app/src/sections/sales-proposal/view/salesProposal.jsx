@@ -1,5 +1,6 @@
 import { Box, Button, Stack, Typography } from "@mui/material";
 import CombinedForm from "../sales-form-items";
+// import SalesProposalForm from "../sales-form-itemsDEMO";
 
 export async function SalesProposalView() {
   const salesData = await fetch(`http://localhost:3000/api/checks.json`);
@@ -17,6 +18,15 @@ export async function SalesProposalView() {
         </Typography>
       </Stack>
 
+      {/* <Box>
+        {sales.map((sal) => (
+          <SalesProposalForm
+            key={sal.id}
+            sales={sal} 
+            items={items}
+          ></SalesProposalForm>
+        ))}
+      </Box> */}
       <Box>
         {sales.map((sal) => (
           <CombinedForm
