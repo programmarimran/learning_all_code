@@ -1,0 +1,61 @@
+[
+    {
+        "id": 1,
+        "pay_to": {
+            "id": 1,
+            "account_type": "debit",
+            "detail_type": "income",
+            "name": "Account 1",
+            "number": "123",
+            "parent_account": 1,
+            "balance": "6524.00",
+            "as_of": "2025-09-01T00:00:00Z",
+            "bank_name": "test",
+            "bank_account": "test",
+            "bank_routing": "123",
+            "bank_address": "test",
+            "description": "test",
+            "status": "active"
+        },
+        "bank_account": {
+            "id": 1,
+            "account_type": "debit",
+            "detail_type": "income",
+            "name": "Account 1",
+            "number": "123",
+            "parent_account": 1,
+            "balance": "6524.00",
+            "as_of": "2025-09-01T00:00:00Z",
+            "bank_name": "test",
+            "bank_account": "test",
+            "bank_routing": "123",
+            "bank_address": "test",
+            "description": "test",
+            "status": "active"
+        },
+        "vendor": {
+            "id": 1,
+            "type": "vendor",
+            "name": "Vendor #1",
+            "email": "admin@gmail.com",
+            "phone": "123",
+            "address": "test",
+            "city": "test",
+            "state": "test",
+            "country": "test",
+            "zip": "33343",
+            "status": "inactive",
+            "created_at": "2025-09-01T03:35:49Z",
+            "updated_at": "2025-09-01T03:35:49Z"
+        },
+        "check_number": "test",
+        "amount": "100.00",
+        "memo": "test",
+        "sign": "test",
+        "date": "2025-09-01T00:00:00Z",
+        "check_type": "withdrawal",
+        "status": "cleared",
+        "created_at": "2025-09-01T04:42:32.465743Z",
+        "updated_at": "2025-09-01T04:42:32.465743Z"
+    }
+]
